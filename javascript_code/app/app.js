@@ -18,7 +18,7 @@ app.config(function($routeProvider) {
         });
 });
 
-// Just a controller to handle the html page I have testing I am properly making calls
+// Just a controller to handle the html page that is testing if I am properly making calls
 app.controller('restTestController', function($scope, $http) {
     $scope.testDisplay = "This is just a string to test two-way binding";
     $scope.success = "";

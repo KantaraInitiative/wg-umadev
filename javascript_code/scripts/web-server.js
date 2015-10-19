@@ -1,14 +1,12 @@
 /**
  * Created by kfgonzal on 10/14/2015.
  */
-var express = require('express');
-var path = require('path');
-var events = require('./eventsController');
-
-var app = express();
-
-var rootPath = path.normalize(__dirname + '/../');
-var bodyParser = require('body-parser');
+var express = require('express'),
+    path = require('path'),
+    events = require('./eventsController'),
+    bodyParser = require('body-parser'),
+    rootPath = path.normalize(__dirname + '/../'),
+    app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.factory('permReg', function($http){
+app.factory('permReg', function($https){
 
     /**
      * Use future buildRequest utils or helper method for REST methods
@@ -25,7 +25,7 @@ app.factory('permReg', function($http){
             }
         };
 
-        $http(req).then(
+        $https(req).then(
             function(response){
                 console.log("success response: " + response);
             },

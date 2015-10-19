@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.factory('rsRegistration', function($http) {
+app.factory('rsRegistration', function($https) {
 
     /**
      * Use future buildRequest utils or helper method for REST requests
@@ -24,7 +24,7 @@ app.factory('rsRegistration', function($http) {
                 json: ResourceSet.rsJSON()
             };
 
-            $http(req).then(
+            $https(req).then(
                 function(response){
                     console.log("success response: " + response);
                     ResourceSet.rsid = response.data["_id"];
@@ -47,7 +47,7 @@ app.factory('rsRegistration', function($http) {
                 }
             };
 
-            $http(req).then(
+            $https(req).then(
                 function(response){
                     console.log("success response: " + response);
                     return response;
@@ -73,7 +73,7 @@ app.factory('rsRegistration', function($http) {
                 json: ResourceSet.rsJSON()
             };
 
-            $http(req).then(
+            $https(req).then(
                 function(response){
                     console.log("success response: " + response);
                     ResourceSet.rsid = response.data["_id"];
@@ -97,7 +97,7 @@ app.factory('rsRegistration', function($http) {
                 }
             };
 
-            $http(req).then(
+            $https(req).then(
                 function(response){
                     console.log("success response: " + response);
                     return response;
@@ -120,7 +120,7 @@ app.factory('rsRegistration', function($http) {
                 }
             };
 
-            $http(req).then(
+            $https(req).then(
                 function(response){
                     console.log("success response: " + response);
                     return response;

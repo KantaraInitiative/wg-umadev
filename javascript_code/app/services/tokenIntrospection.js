@@ -3,9 +3,7 @@
  */
 
 'use strict';
-
-// Introspect a token to check its validity
-app.factory('introspect', function($http){
+angular.module('introspection').factory('introspect', function($https){
 
     /**
      * Use future buildRequest utils or helper method for REST methods
@@ -20,7 +18,7 @@ app.factory('introspect', function($http){
             }
         };
 
-        $http(req).then(
+        $https(req).then(
             function(response){
                 console.log("success response: " + response);
             },

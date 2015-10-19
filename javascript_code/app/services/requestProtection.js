@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.factory('protectionReq', function($http) {
+app.factory('protectionReq', function($https) {
 
     return {
         // Request Protection API Token, this will be handled much differently with scope, etc in the URI
@@ -16,7 +16,7 @@ app.factory('protectionReq', function($http) {
                 }
             };
 
-            $http(req).then(
+            $https(req).then(
                 function(response){
                     console.log("success response: " + response);
                 },
