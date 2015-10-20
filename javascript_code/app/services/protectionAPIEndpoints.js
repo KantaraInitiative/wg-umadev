@@ -5,7 +5,7 @@
 
 // will be a separate "class"/factory for endpoints once they are read from config
 
-app.factory('protAPIEndpoints', function($https){
+app.factory('protAPIEndpoints', function($http){
     var resourceRegistrationEndpoint = "";
     var permissionRegistrationEndpoint = "";
     var introspectionEndpoint = "";
@@ -39,7 +39,7 @@ app.factory('protAPIEndpoints', function($https){
             }
         };
 
-        $https(req).then(
+        $http(req).then(
             function(response) {
                 console.log("success response: " + response);
                 extractProtectionAPIEndpoints(response.data);

@@ -8,6 +8,8 @@ var express = require('express'),
     rootPath = path.normalize(__dirname + '/../'),
     app = express();
 
+var https = ('https');
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(rootPath + 'app'));
