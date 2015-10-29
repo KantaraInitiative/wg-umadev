@@ -7,6 +7,8 @@
 
 app.factory('protAPIEndpoints', function($http){
     var resourceRegistrationEndpoint = "";
+    // How to communicate this to the Node side for reuse?
+    // Could create on Node side instead and share with Angular side?
     var permissionRegistrationEndpoint = "";
     var introspectionEndpoint = "";
 

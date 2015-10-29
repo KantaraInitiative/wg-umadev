@@ -26,7 +26,7 @@ module.exports = {
         request(options, function(error, response, body){
             if(error){
                 console.log(error); // Something went wrong other than something like 404, 403, 401..more like connection error, host error
-                res.send(500, 'Server Error');
+                res.status(500).send('Server Error');
             }
             else{
                 var statusCode = response.statusCode;
@@ -93,7 +93,7 @@ module.exports = {
                         // get the resource_set_id (s) and give access to the desired resource if it is in the permissions
                         for(var i = 0; i < permissions.length; i++){
                             if(rsid === permissions["resource_set_id"]){
-                                //res.send(); // send access to rsid
+                                //TODO: res.send(); // send access to rsid
                                 break;
                             }
                         }

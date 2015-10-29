@@ -25,7 +25,8 @@ module.exports = {
         request(options, function(error, response, body){
             if(error){
                 console.log(error); // Something went wrong other than something like 404, 403, 401..more like connection error, host error
-                res.send(500, 'Server Error');
+                //res.send(500, 'Server Error');
+                res.status(500).send('Server Error');
             }
             else{
                 var statusCode = response.statusCode;
@@ -56,35 +57,4 @@ module.exports = {
             }
         });
     }
-};
-
-var registerPermission = function(token, rsid, scopes) {
-
-    var req = {
-        url: "https://as.example.com/rs/perm_uri", // authorization_endpoint
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer" + token
-        },
-        json: {
-            resource_set_id: rsid,
-            scopes: scopes
-        }
-    };
-
-    $http(req).then(
-        function(response){
-            console.log("success response: " + response);
-        },
-        function(response){
-            console.log("ERROR: " + response.status + " " + response.statusText);
-        },
-        function(response){
-            console.log("notify response: " + response);
-        });
-};
-
-return {
-    registerPermission: registerPermission
 };

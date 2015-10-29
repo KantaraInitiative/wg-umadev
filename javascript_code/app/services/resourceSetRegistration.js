@@ -3,8 +3,10 @@
  */
 'use strict';
 
-app.factory('rsRegistration', function($http) {
+app.factory('rsRegistration', function($http, protAPIEndpoints) {
 
+    // Use this for the endpoint throughout the module
+    var registrationEP = protAPIEndpoints.getPermissionRegEP();
     /**
      * Use future buildRequest utils or helper method for REST requests
      *
@@ -15,7 +17,7 @@ app.factory('rsRegistration', function($http) {
     return {
         createRS: function(token, ResourceSet) { // Create/register a new resource set with the AS
             var req = {
-                url: "https://as.example.com/rs/rsrc_uri/resource_set",
+                url: registrationEP,
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -31,7 +33,6 @@ app.factory('rsRegistration', function($http) {
                 },
                 function(response){
                     console.log("ERROR: " + response.status + " " + response.statusText);
-                    return response;
                 },
                 function(response){
                     console.log("notify response: " + response);
@@ -40,7 +41,7 @@ app.factory('rsRegistration', function($http) {
         readRS: function(token, rsid) { // Read the details of a specific resource set at the AS
 
             var req = {
-                url: "https://as.example.com/rs/rsrc_uri/resource_set/" + rsid,
+                url: registrationEP + rsid,
                 method: "GET",
                 headers: {
                     "Authorization": "Bearer " + token
@@ -50,11 +51,9 @@ app.factory('rsRegistration', function($http) {
             $http(req).then(
                 function(response){
                     console.log("success response: " + response);
-                    return response;
                 },
                 function(response){
                     console.log("ERROR: " + response.status + " " + response.statusText);
-                    return response;
                 },
                 function(response){
                     console.log("notify response: " + response);
@@ -63,7 +62,7 @@ app.factory('rsRegistration', function($http) {
         updateRS: function(token, ResourceSet) { // Update resource Set at the AS
 
             var req = {
-                url: "https://as.example.com/rs/rsrc_uri/resource_set/" + ResourceSet.rsid,
+                url: registrationEP + ResourceSet.rsid,
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -80,7 +79,6 @@ app.factory('rsRegistration', function($http) {
                 },
                 function(response){
                     console.log("ERROR: " + response.status + " " + response.statusText);
-                    return response;
                 },
                 function(response){
                     console.log("notify response: " + response);
@@ -89,7 +87,7 @@ app.factory('rsRegistration', function($http) {
         deleteRS: function(token, rsid) {
 
             var req = {
-                url: "https://as.example.com/rs/rsrc_uri/resource_set/" + rsid,
+                url: registrationEP + rsid,
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -100,11 +98,9 @@ app.factory('rsRegistration', function($http) {
             $http(req).then(
                 function(response){
                     console.log("success response: " + response);
-                    return response;
                 },
                 function(response){
                     console.log("ERROR: " + response.status + " " + response.statusText);
-                    return response;
                 },
                 function(response){
                     console.log("notify response: " + response);
@@ -113,7 +109,7 @@ app.factory('rsRegistration', function($http) {
         listAll: function(token) {
 
             var req = {
-                url: "https://as.example.com/rs/rsrc_uri/resource_set",
+                url: registrationEP,
                 method: "GET",
                 headers: {
                     "Authorization": "Bearer " + token
@@ -123,11 +119,9 @@ app.factory('rsRegistration', function($http) {
             $http(req).then(
                 function(response){
                     console.log("success response: " + response);
-                    return response;
                 },
                 function(response){
                     console.log("ERROR: " + response.status + " " + response.statusText);
-                    return response;
                 },
                 function(response){
                     console.log("notify response: " + response);

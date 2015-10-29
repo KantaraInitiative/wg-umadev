@@ -33,23 +33,20 @@
  The referenced icon MAY be used by the authorization server in its resource owner user interface for the resource owner.
  */
 
-var RS = angular.module('RS', []);
-
-RS.factory('ResourceSet', function(rsRegistration){
-    // Actual PAT on an RS would be probably stored with the RSOwner userID as primary key
-    var PAT = "4twgw5335t3twefwfwr3556";
+app.factory('ResourceSet', function(rsRegistration){
 
     // Constructor
-    var ResourceSet = function(name, uri, type, scopes, icon_uri){
-        this.name = name;
-        this.uri = uri;
-        this.type = type;
-        this.scopes = scopes;
-        this.icon_uri = icon_uri;
-        this.rsid = "";
+    var ResourceSet = function(ResourceSetJSON){
+        this.date = ResourceSetJSON.date;
+        this.name = ResourceSetJSON.name;
+        this.uri = ResourceSetJSON.uri;
+        this.type = ResourceSetJSON.type;
+        this.scopes = ResourceSetJSON.scopes;
+        this.icon_uri = ResourceSetJSON.icon_uri;
+        this.rsid = ResourceSetJSON.rsid;
     };
 
-    // Public method for this class. RS needs to have an rsid
+    // Public method for this class to create JSON needed for AS. RS needs to have an rsid
     // but will not have it yet at creation and AS only needs the following 5 pairs
     ResourceSet.prototype.rsJSON = function(){
         return {
@@ -62,28 +59,35 @@ RS.factory('ResourceSet', function(rsRegistration){
     };
 
     // To set the rsid after returned from AS on success create
-    ResourceSet.prototype.create = function(){
+    ResourceSet.prototype.create = function(PAT){
         rsRegistration.createRS(PAT, this);
     };
 
-    ResourceSet.prototype.read = function(){
+    ResourceSet.prototype.read = function(PAT){
         // Perform a read from RSReg, will need to get PAT for owner of this resource
         rsRegistration.readRS(PAT, this.rsid);
     };
 
-    // This is assuming the RS implements where they modify the RS object first by RS.name = name...etc. and then call RS.update
+    // This is assuming the RS implements where they modify the RS object first by RS.name = name...etc.
+    // and then call RS.update
     // Else need different update methods for each attribute, like updateName(name), updateScopes(scopes), etc
-    ResourceSet.prototype.update = function(){
+    ResourceSet.prototype.update = function(PAT){
         rsRegistration.updateRS(PAT, this);
     };
 
-    ResourceSet.prototype.delete = function(){
+    ResourceSet.prototype.delete = function(PAT){
         rsRegistration.deleteRS(PAT, this.rsid);
     };
 
-    ResourceSet.prototype.list = function(){
-        rsRegistration.listAll(PAT);
-    };
+    // This method really doesn't "belong" to the resourceSet but
+    // more likely used automatically or by an admin
+    // Moved to RS Owner, so can request a list of all their rsids,
+    // so not needed to store clientId with RSet or a list of rsid with client/RSOwner unless determined better to do so
+
+    //ResourceSet.prototype.list = function(PAT){
+    //    rsRegistration.listAll(PAT);
+    //};
+
     // return the constructor
     return ResourceSet;
 });

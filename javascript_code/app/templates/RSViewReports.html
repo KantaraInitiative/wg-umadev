@@ -1,0 +1,11 @@
+<section id="RSViewReports">
+    <header>
+        <h1>Your CPAP Reports:</h1>
+    </header>
+    <section id="indReportSection" ng-repeat="report in reports"> <!-- For permitting individual reports -->
+        Report Date: {{report.date}} &nbsp
+        <button ng-click="openReport()">Open</button>
+    </section>
+    </br>
+    <button ng-click="returnHome()">Return Home</button>
+</section>

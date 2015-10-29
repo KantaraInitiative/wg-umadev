@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
-<head>
-    <meta charset="UTF-8">
-    <title>Resource Server</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Resource Server</title>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="../node_modules/angular-route/angular-route.js"></script>
+        <script src="app.js"></script>
 
-    <script src="../node_modules/angular/angular.js"></script>
-    <script src="../node_modules/angular-route/angular-route.js"></script>
+        <script src="controllers/RSHomeController.js"></script>
+        <script src="controllers/RSViewReportsController.js"></script>
 
-    <script src="app.js"></script>
+        <script src="services/requestProtection.js"></script>
+        <script src="services/resourceSetRegistration.js"></script>
+        <script src="services/protectionAPIEndpoints.js"></script>
 
-</head>
-
-<body>
-
-<ng-view></ng-view>
-<br/>
-
-<footer>
-    &copy; 2015 Katie Gonzalez
-</footer>
-</body>
+        <script src="objects/RSOwner.js"></script>
+        <script src="objects/ResourceSet.js"></script>
+    </head>
+    <body>
+        <ng-view></ng-view>
+        <br/>
+        <footer>
+            &copy; 2015
+        </footer>
+    </body>
 </html>
