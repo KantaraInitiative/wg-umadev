@@ -1,5 +1,5 @@
 {
-  "name": "wg-umadev-angular/node",
+  "name": "wg_umadev_angular_node",
   "private": "true",
   "version": "0.0.1",
   "description": "UMA implementation API idea for resource servers",
