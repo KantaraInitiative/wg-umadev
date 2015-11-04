@@ -38,12 +38,13 @@ app.controller('RSHomeController', function($scope, $location, $timeout, protect
     };
 
     $scope.testResourceReg = function(){
-        testRSReg.runTest();
-        var delayedPath = function(){
-            $location.path('/testResReg');
-        };
-        // A little delay small enough to catch up $scope data from test results
-        $timeout(delayedPath, 1);
+        // Do nothing for now until can actually run against AS
+        //testRSReg.runTest();
+        //var delayedPath = function(){
+        //    $location.path('/testResReg');
+        //};
+        //// A little delay small enough to catch up $scope data from test results
+        //$timeout(delayedPath, 1);
     };
 
     $scope.viewReports = function(){
