@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.factory('rsRegistration', function($http, protAPIEndpoints) {
+app.factory('rsRegistration', function($http, protAPIEndpoints, testRSReg) {
 
     // Use this for the endpoint throughout the module
     var registrationEP = protAPIEndpoints.getPermissionRegEP();
@@ -23,16 +23,21 @@ app.factory('rsRegistration', function($http, protAPIEndpoints) {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + token
                 },
-                json: ResourceSet.rsJSON()
+                data: ResourceSet.toJSONForAS()
             };
 
             $http(req).then(
                 function(response){
-                    console.log("success response: " + response);
-                    ResourceSet.rsid = response.data["_id"];
+                    //console.log("success response: " + response.data);
+                    ResourceSet.setRsid(response.data["_id"]);
+
+                    // Just adding results to the test suite
+                    testRSReg.addCreateResult("success response: " + response.data);
                 },
                 function(response){
                     console.log("ERROR: " + response.status + " " + response.statusText);
+
+                    testRSReg.addCreateResult("ERROR: " + response.status + " " + response.statusText);
                 },
                 function(response){
                     console.log("notify response: " + response);
@@ -41,19 +46,26 @@ app.factory('rsRegistration', function($http, protAPIEndpoints) {
         readRS: function(token, rsid) { // Read the details of a specific resource set at the AS
 
             var req = {
-                url: registrationEP + rsid,
+                url: registrationEP + "/" + rsid,
                 method: "GET",
                 headers: {
+                    "Content-Type": "application/json",
                     "Authorization": "Bearer " + token
                 }
             };
 
             $http(req).then(
                 function(response){
-                    console.log("success response: " + response);
+                    console.log("success response: " + response.data);
+
+                    // Just adding results to the test suite
+                    testRSReg.addReadResult("success response: " + response.data);
                 },
                 function(response){
                     console.log("ERROR: " + response.status + " " + response.statusText);
+
+                    // Just adding results to the test suite
+                    testRSReg.addReadResult("ERROR: " + response.status + " " + response.statusText);
                 },
                 function(response){
                     console.log("notify response: " + response);
@@ -62,23 +74,29 @@ app.factory('rsRegistration', function($http, protAPIEndpoints) {
         updateRS: function(token, ResourceSet) { // Update resource Set at the AS
 
             var req = {
-                url: registrationEP + ResourceSet.rsid,
+                url: registrationEP + "/" + ResourceSet.rsid,
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + token
                 },
                 // RS_description with updated info
-                json: ResourceSet.rsJSON()
+                data: ResourceSet.toJSONForAS()
             };
 
             $http(req).then(
                 function(response){
-                    console.log("success response: " + response);
+                    console.log("success response: " + response.data);
                     ResourceSet.rsid = response.data["_id"];
+
+                    // Just adding results to the test suite
+                    testRSReg.addUpdateResult("success response: " + response.data);
                 },
                 function(response){
                     console.log("ERROR: " + response.status + " " + response.statusText);
+
+                    // Just adding results to the test suite
+                    testRSReg.addUpdateResult("ERROR: " + response.status + " " + response.statusText);
                 },
                 function(response){
                     console.log("notify response: " + response);
@@ -87,7 +105,7 @@ app.factory('rsRegistration', function($http, protAPIEndpoints) {
         deleteRS: function(token, rsid) {
 
             var req = {
-                url: registrationEP + rsid,
+                url: registrationEP + "/" + rsid,
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -97,10 +115,16 @@ app.factory('rsRegistration', function($http, protAPIEndpoints) {
 
             $http(req).then(
                 function(response){
-                    console.log("success response: " + response);
+                    console.log("success response: " + response.data);
+
+                    // Just adding results to the test suite
+                    testRSReg.addDeleteResult("success response: " + response.data);
                 },
                 function(response){
                     console.log("ERROR: " + response.status + " " + response.statusText);
+
+                    // Just adding results to the test suite
+                    testRSReg.addDeleteResult("ERROR: " + response.status + " " + response.statusText);
                 },
                 function(response){
                     console.log("notify response: " + response);
@@ -112,16 +136,23 @@ app.factory('rsRegistration', function($http, protAPIEndpoints) {
                 url: registrationEP,
                 method: "GET",
                 headers: {
+                    "Content-Type": "application/json",
                     "Authorization": "Bearer " + token
                 }
             };
 
             $http(req).then(
                 function(response){
-                    console.log("success response: " + response);
+                    console.log("success response: " + response.data);
+
+                    // Just adding results to the test suite
+                    testRSReg.addListResult("success response: " + response.data);
                 },
                 function(response){
                     console.log("ERROR: " + response.status + " " + response.statusText);
+
+                    // Just adding results to the test suite
+                    testRSReg.addListResult("ERROR: " + response.status + " " + response.statusText);
                 },
                 function(response){
                     console.log("notify response: " + response);

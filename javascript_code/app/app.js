@@ -6,8 +6,7 @@
 var app = angular.module('app', ['ngRoute']);
 
 app.config(function($routeProvider) {
-    console.log($routeProvider);
-    console.log("RouteProvider - app.config");
+
     $routeProvider.
         when('/', {
             templateUrl: 'templates/RSHome.html',
@@ -16,6 +15,10 @@ app.config(function($routeProvider) {
         when('/viewReports', {
             templateUrl: 'templates/RSViewReports.html',
             controller: 'RSViewReportsController'
+        }).
+        when('/testResReg', {
+            templateUrl: 'testPages/testResourceSetRegistration.html',
+            controller: 'testResourceSetRegistrationController'
         }).
         otherwise({
             redirectTo: '/'

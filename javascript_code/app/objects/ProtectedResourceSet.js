@@ -33,22 +33,70 @@
  The referenced icon MAY be used by the authorization server in its resource owner user interface for the resource owner.
  */
 
-app.factory('ResourceSet', function(rsRegistration){
+app.factory('ProtectedResourceSet', function(){
 
     // Constructor
-    var ResourceSet = function(ResourceSetJSON){
-        this.date = ResourceSetJSON.date;
-        this.name = ResourceSetJSON.name;
-        this.uri = ResourceSetJSON.uri;
-        this.type = ResourceSetJSON.type;
-        this.scopes = ResourceSetJSON.scopes;
-        this.icon_uri = ResourceSetJSON.icon_uri;
-        this.rsid = ResourceSetJSON.rsid;
+    var ResourceSet = function(){
+        this.name = "";
+        this.uri = "";
+        this.type = "";
+        this.scopes = [];
+        this.icon_uri = "";
+        this.rsid = "";
+    };
+
+    // Create a new resourceSet from parsed JSON
+    var createFromJSON = function(ResourceSetJSON){
+
+        var newResourceSetFromJSON = create();
+        newResourceSetFromJSON.name = ResourceSetJSON.name;
+        newResourceSetFromJSON.uri = ResourceSetJSON.uri;
+        newResourceSetFromJSON.type = ResourceSetJSON.type;
+        for(var i = 0; i < ResourceSetJSON.scopes.length; i++){
+            newResourceSetFromJSON.scopes.push(ResourceSetJSON.scopes[i]);
+        }
+        newResourceSetFromJSON.icon_uri = ResourceSetJSON.icon_uri;
+        return newResourceSetFromJSON;
+    };
+
+    var create = function(){
+        // return the constructor
+        return new ResourceSet();
+    };
+
+    // Method specific to the object instance to set name
+    ResourceSet.prototype.withName = function(name){
+        this.name = name;
+    };
+
+    // Method specific to the object instance to set Type
+    ResourceSet.prototype.withType = function(type){
+        this.type = type;
+    };
+
+    // Method specific to the object instance to set Scope(s)
+    ResourceSet.prototype.withScope = function(scope){
+        this.scopes.push(scope);
+    };
+
+    // Method specific to the object instance to set icon URI
+    ResourceSet.prototype.withIcon = function(icon_URI){
+        this.icon_uri = icon_URI;
+    };
+
+    // Method specific to the object instance to set URI of resource
+    ResourceSet.prototype.withURI = function(URI){
+        this.uri = URI;
+    };
+
+    // Method specific to the object instance to set rsid
+    ResourceSet.prototype.setRsid = function(rsid){
+        this.rsid = rsid;
     };
 
     // Public method for this class to create JSON needed for AS. RS needs to have an rsid
-    // but will not have it yet at creation and AS only needs the following 5 pairs
-    ResourceSet.prototype.rsJSON = function(){
+    // but will not have it yet at creation and AS only needs the following 5 pairs for create
+    ResourceSet.prototype.toJSONForAS = function(){
         return {
             name: this.name,
             uri: this.uri,
@@ -58,36 +106,8 @@ app.factory('ResourceSet', function(rsRegistration){
         };
     };
 
-    // To set the rsid after returned from AS on success create
-    ResourceSet.prototype.create = function(PAT){
-        rsRegistration.createRS(PAT, this);
-    };
-
-    ResourceSet.prototype.read = function(PAT){
-        // Perform a read from RSReg, will need to get PAT for owner of this resource
-        rsRegistration.readRS(PAT, this.rsid);
-    };
-
-    // This is assuming the RS implements where they modify the RS object first by RS.name = name...etc.
-    // and then call RS.update
-    // Else need different update methods for each attribute, like updateName(name), updateScopes(scopes), etc
-    ResourceSet.prototype.update = function(PAT){
-        rsRegistration.updateRS(PAT, this);
-    };
-
-    ResourceSet.prototype.delete = function(PAT){
-        rsRegistration.deleteRS(PAT, this.rsid);
-    };
-
-    // This method really doesn't "belong" to the resourceSet but
-    // more likely used automatically or by an admin
-    // Moved to RS Owner, so can request a list of all their rsids,
-    // so not needed to store clientId with RSet or a list of rsid with client/RSOwner unless determined better to do so
-
-    //ResourceSet.prototype.list = function(PAT){
-    //    rsRegistration.listAll(PAT);
-    //};
-
-    // return the constructor
-    return ResourceSet;
+    return {
+        create: create,
+        createFromJSON: createFromJSON
+    }
 });

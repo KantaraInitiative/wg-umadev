@@ -1,0 +1,42 @@
+<section id="testRSRegSection">
+    <header>
+        <h1>Testing Resource Set Registration:</h1>
+    </header>
+    Create results of initial create - should show the rsid for each created resource
+    <section id="testCreateSection" ng-repeat="result in createResults track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    Read results of initial create - Should display the 3 resource sets registered
+    <section id="testReadAfterCreateSection" ng-repeat="result in readResults | limitTo:3 track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    List result of initial create - Should be a list of rsids for the 3 previously registered resources
+    <section id="testListAfterCreateSection" ng-repeat="result in listResults | limitTo:3 track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    Update result of an updated resource -
+    <section id="testUpdateSection" ng-repeat="result in updateResults track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    Read the updated resource - type should now be displayed as : "changingTypeForTest"
+    <section id="testReadAfterUpdateSection" ng-repeat="result in readResults | limitTo:-1 track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    Delete the resource just updated -
+    <section id="testDeleteSection" ng-repeat="result in deleteResults track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    List the protected rsids - There should now only be 2 with the deleted no longer included
+    <section id="testListAfterDeleteSection" ng-repeat="result in listResults | limitTo:-2 track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    </br>
+    <button ng-click="returnHome()">Return Home</button>
+</section>

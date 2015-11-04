@@ -4,8 +4,9 @@
 'use strict';
 
 // will be a separate "class"/factory for endpoints once they are read from config
-
 app.factory('protAPIEndpoints', function($http){
+    var aSConfigEndpoint = "";//https://as.example.com/uma-configuration";
+
     var resourceRegistrationEndpoint = "";
     // How to communicate this to the Node side for reuse?
     // Could create on Node side instead and share with Angular side?
@@ -34,7 +35,7 @@ app.factory('protAPIEndpoints', function($http){
     // Should return the AS endpoint definitions
     var getConfig = function() {
         var req = {
-            url: "https://as.example.com/uma-configuration",
+            url: aSConfigEndpoint,
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -43,7 +44,7 @@ app.factory('protAPIEndpoints', function($http){
 
         $http(req).then(
             function(response) {
-                console.log("success response: " + response);
+                console.log("success response: " + response.data);
                 extractProtectionAPIEndpoints(response.data);
             },
             function(response) {

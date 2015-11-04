@@ -3,25 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <title>Resource Server</title>
+
         <script src="../node_modules/angular/angular.js"></script>
         <script src="../node_modules/angular-route/angular-route.js"></script>
         <script src="app.js"></script>
 
+        <!-- Controllers -->
         <script src="controllers/RSHomeController.js"></script>
         <script src="controllers/RSViewReportsController.js"></script>
 
+        <!-- Test Pages -->
+        <script src="testPages/testResourceSetRegistrationController.js"></script>
+        <script src="testPages/testRSReg.js"></script>
+
+        <!-- Just storage of some fake rSOwner and resourceSet Objects -->
+        <script src="imitationDatabases/resourceSetImitationDatabase.js"></script>
+        <script src="imitationDatabases/rSOwnerImitationDatabase.js"></script>
+
+        <!-- AS specific services -->
         <script src="services/requestProtection.js"></script>
         <script src="services/resourceSetRegistration.js"></script>
         <script src="services/protectionAPIEndpoints.js"></script>
 
+        <!-- Objects -->
         <script src="objects/RSOwner.js"></script>
-        <script src="objects/ResourceSet.js"></script>
+        <script src="objects/ProtectedResourceSet.js"></script>
     </head>
-    <body>
+    <body ng-cloak>
         <ng-view></ng-view>
-        <br/>
-        <footer>
-            &copy; 2015
-        </footer>
     </body>
 </html>

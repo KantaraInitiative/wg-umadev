@@ -2,8 +2,8 @@
     <header>
         <h1>Your CPAP Reports:</h1>
     </header>
-    <section id="indReportSection" ng-repeat="report in reports"> <!-- For permitting individual reports -->
-        Report Date: {{report.date}} &nbsp
+    <section id="indReportSection" ng-repeat="report in reports track by $index">
+        Report Name: {{report.name}} &nbsp; {{report.scopes}}
         <button ng-click="openReport()">Open</button>
     </section>
     </br>
