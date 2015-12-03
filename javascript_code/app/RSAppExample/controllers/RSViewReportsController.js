@@ -9,10 +9,10 @@
 */
 app.controller('RSViewReportsController', function($scope, $location, resourceSetImitationDatabase) {
 
-    $scope.reports = resourceSetImitationDatabase.getAllResourcesOfClient("1234"); // Fake user ID as input
+    $scope.reports = resourceSetImitationDatabase.getAllResourcesOfClient('1234'); // Fake user ID as input
 
-    $scope.returnHome = function(){
-      $location.path('/');
+    $scope.return = function(){
+      $location.path('/exampleRS');
     };
 
     $scope.openReport = function(){

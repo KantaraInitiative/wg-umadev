@@ -6,30 +6,37 @@
 
         <script src="../node_modules/angular/angular.js"></script>
         <script src="../node_modules/angular-route/angular-route.js"></script>
-        <script src="app.js"></script>
+        <script src="./app.js"></script>
 
-        <!-- Controllers -->
-        <script src="controllers/RSHomeController.js"></script>
-        <script src="controllers/RSViewReportsController.js"></script>
+        <!-- Include UMA module -->
+        <script src="../UMA_Angular/UMAAngular.js"></script>
+
+        <!-- UMA Module Objects -->
+        <script src="../UMA_Angular/objects/ResourceSetOwner.js"></script>
+        <script src="../UMA_Angular/objects/ProtectedResourceSet.js"></script>
+
+        <!-- UMA Module AS Protection Services -->
+        <script src="../UMA_Angular/authorizationServerAPI/requestProtection.js"></script>
+        <script src="../UMA_Angular/authorizationServerAPI/protectionAPI/resourceSetRegistration.js"></script>
+        <script src="../UMA_Angular/authorizationServerAPI/authorizationServerEndpoints.js"></script>
+
+        <!-- App Home Controller -->
+        <script src="appHome/homeController.js"></script>
+
+        <!-- RS Application Example Controllers -->
+        <script src="RSAppExample/controllers/RSHomeController.js"></script>
+        <script src="RSAppExample/controllers/RSViewReportsController.js"></script>
 
         <!-- Test Pages -->
-        <script src="testPages/testResourceSetRegistrationController.js"></script>
-        <script src="testPages/testRSReg.js"></script>
+        <script src="testPage/testsController.js"></script>
+        <script src="testPage/testResourceRegistrationAPI/testResourceSetRegistrationController.js"></script>
+        <script src="testPage/testResourceRegistrationAPI/testRSReg.js"></script>
 
         <!-- Just storage of some fake rSOwner and resourceSet Objects -->
         <script src="imitationDatabases/resourceSetImitationDatabase.js"></script>
         <script src="imitationDatabases/rSOwnerImitationDatabase.js"></script>
-
-        <!-- AS specific services -->
-        <script src="services/requestProtection.js"></script>
-        <script src="services/resourceSetRegistration.js"></script>
-        <script src="services/protectionAPIEndpoints.js"></script>
-
-        <!-- Objects -->
-        <script src="objects/RSOwner.js"></script>
-        <script src="objects/ProtectedResourceSet.js"></script>
     </head>
-    <body ng-cloak>
+    <body>
         <ng-view></ng-view>
     </body>
 </html>

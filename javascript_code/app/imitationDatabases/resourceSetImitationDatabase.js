@@ -17,35 +17,35 @@ app.factory('resourceSetImitationDatabase', function(ProtectedResourceSet){
     // Actual resource Sets would be from a DB pulled by rsid after getting list of rsids from AS
     // and objects compiled from JSON
     var exampleProtectedResourceSet1 = ProtectedResourceSet.createFromJSON({
-        "client_id": "1234",
-        "name": "CPAP Monthly Report/May-2015",
-        "uri": "/fakeURI",
-        "type": "CPAP Medical Report",
-        "scopes": ["../view"],
-        "icon_uri": "/pictureOfReportFolder"
+        'client_id': '1234',
+        'name': 'CPAP Monthly Report/May-2015',
+        'uri': '/fakeURI',
+        'type': 'CPAP Medical Report',
+        'scopes': ['../view'],
+        'icon_uri': '/pictureOfReportFolder'
     });
 
     // I like the idea of the RS being able to create a PtotectedResourceSet from an existing Resource JSON from their DB
     var exampleProtectedResourceSet2 = ProtectedResourceSet.createFromJSON({
-        "client_id": "1234",
-        "name": "CPAP Monthly Report/June-2015",
-        "uri": "/fakeURI",
-        "type": "CPAP Medical Report",
-        "scopes": ["../view", "../download", "../modify"],
-        "icon_uri": "/pictureOfReportFolder"
+        'client_id': '1234',
+        'name': 'CPAP Monthly Report/June-2015',
+        'uri': '/fakeURI',
+        'type': 'CPAP Medical Report',
+        'scopes': ['../view', '../download', '../modify'],
+        'icon_uri': '/pictureOfReportFolder'
     });
 
     // Showing both create processes
     var exampleProtectedResourceSet3 = ProtectedResourceSet.create();
     // Inputs would be from some data pulled from an actual DB
-    exampleProtectedResourceSet3.withName("CPAP Monthly Report/July-2015");
-    exampleProtectedResourceSet3.withURI("/fakeURI");
-    exampleProtectedResourceSet3.withType("CPAP Medical Report");
-    exampleProtectedResourceSet3.withScope("../view");
-    exampleProtectedResourceSet3.withScope("../download");
-    exampleProtectedResourceSet3.withIcon("/pictureOfReportFolder");
+    exampleProtectedResourceSet3.withName('CPAP Monthly Report/July-2015');
+    exampleProtectedResourceSet3.withURI('/fakeURI');
+    exampleProtectedResourceSet3.withType('CPAP Medical Report');
+    exampleProtectedResourceSet3.withScope('../view');
+    exampleProtectedResourceSet3.withScope('../download');
+    exampleProtectedResourceSet3.withIcon('/pictureOfReportFolder');
 
-    exampleProtectedResourceSet3.client_id = "1234";
+    exampleProtectedResourceSet3.client_id = '1234';
 
     // Fake add protected resources compiled from a set/subset of all resources
     allResources.push(exampleProtectedResourceSet1);
@@ -60,7 +60,16 @@ app.factory('resourceSetImitationDatabase', function(ProtectedResourceSet){
         return allResources;
     };
 
+    var deleteResource = function(resourceSet){
+        var index = allResources.indexOf(resourceSet);
+        if(index > -1){
+            allResources.splice(index, 1);
+        }
+        console.log('deleting resourceSet rsid: ' + resourceSet['rsid'] +  'remaining in set: ' + allResources);
+    };
+
     return {
-        getAllResourcesOfClient: getAllResourcesOfClient
+        getAllResourcesOfClient: getAllResourcesOfClient,
+        deleteResource: deleteResource
     };
 });

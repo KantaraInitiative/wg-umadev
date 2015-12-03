@@ -3,21 +3,32 @@
  */
 'use strict';    
 
-var app = angular.module('app', ['ngRoute']);
+// App for the resource server example and a test page that displays test results
+// of the UMA interactions with the authorization server
+
+var app = angular.module('app', ['ngRoute', 'UMAAngular']);
 
 app.config(function($routeProvider) {
 
     $routeProvider.
         when('/', {
-            templateUrl: 'templates/RSHome.html',
+            templateUrl: 'appHome/home.html',
+            controller: 'homeController'
+        }).
+        when('/exampleRS', {
+            templateUrl: 'RSAppExample/templates/RSHome.html',
             controller: 'RSHomeController'
         }).
         when('/viewReports', {
-            templateUrl: 'templates/RSViewReports.html',
+            templateUrl: 'RSAppExample/templates/RSViewReports.html',
             controller: 'RSViewReportsController'
         }).
+        when('/tests', {
+            templateUrl: 'testPage/tests.html',
+            controller: 'testsController'
+        }).
         when('/testResReg', {
-            templateUrl: 'testPages/testResourceSetRegistration.html',
+            templateUrl: 'testPage/testResourceRegistrationAPI/testResourceSetRegistration.html',
             controller: 'testResourceSetRegistrationController'
         }).
         otherwise({

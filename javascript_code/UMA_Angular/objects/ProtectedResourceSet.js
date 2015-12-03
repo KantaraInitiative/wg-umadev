@@ -33,19 +33,19 @@
  The referenced icon MAY be used by the authorization server in its resource owner user interface for the resource owner.
  */
 
-app.factory('ProtectedResourceSet', function(){
+UMAAngular.factory('ProtectedResourceSet', function(){
 
-    // Constructor
+    /* ProtectedResourceSet constructor */
     var ResourceSet = function(){
-        this.name = "";
-        this.uri = "";
-        this.type = "";
+        this.name = '';
+        this.uri = '';
+        this.type = '';
         this.scopes = [];
-        this.icon_uri = "";
-        this.rsid = "";
+        this.icon_uri = '';
+        this.rsid = '';
     };
 
-    // Create a new resourceSet from parsed JSON
+    /* Create a new ProtectedResourceSet from parsed JSON */
     var createFromJSON = function(ResourceSetJSON){
 
         var newResourceSetFromJSON = create();
@@ -59,43 +59,16 @@ app.factory('ProtectedResourceSet', function(){
         return newResourceSetFromJSON;
     };
 
+    /* Create a new protectedResourceSet */
     var create = function(){
         // return the constructor
         return new ResourceSet();
     };
 
-    // Method specific to the object instance to set name
-    ResourceSet.prototype.withName = function(name){
-        this.name = name;
-    };
-
-    // Method specific to the object instance to set Type
-    ResourceSet.prototype.withType = function(type){
-        this.type = type;
-    };
-
-    // Method specific to the object instance to set Scope(s)
-    ResourceSet.prototype.withScope = function(scope){
-        this.scopes.push(scope);
-    };
-
-    // Method specific to the object instance to set icon URI
-    ResourceSet.prototype.withIcon = function(icon_URI){
-        this.icon_uri = icon_URI;
-    };
-
-    // Method specific to the object instance to set URI of resource
-    ResourceSet.prototype.withURI = function(URI){
-        this.uri = URI;
-    };
-
-    // Method specific to the object instance to set rsid
-    ResourceSet.prototype.setRsid = function(rsid){
-        this.rsid = rsid;
-    };
-
-    // Public method for this class to create JSON needed for AS. RS needs to have an rsid
-    // but will not have it yet at creation and AS only needs the following 5 pairs for create
+    /* Method to create JSON needed for AS from this object instance.
+     * RS needs to have an rsid but will not have it yet at creation
+     * and AS only needs the following 5 pairs for create
+     * */
     ResourceSet.prototype.toJSONForAS = function(){
         return {
             name: this.name,
@@ -104,6 +77,66 @@ app.factory('ProtectedResourceSet', function(){
             scopes: this.scopes,
             icon_uri: this.icon_uri
         };
+    };
+
+    /* Setter for name attribute */
+    ResourceSet.prototype.withName = function(name){
+        this.name = name;
+    };
+
+    /* Setter for Type attribute */
+    ResourceSet.prototype.withType = function(type){
+        this.type = type;
+    };
+
+    /* Setter for Scope attribute */
+    ResourceSet.prototype.withScope = function(scope){
+        this.scopes.push(scope);
+    };
+
+    /* Setter for icon URI attribute */
+    ResourceSet.prototype.withIcon = function(icon_URI){
+        this.icon_uri = icon_URI;
+    };
+
+    /* Setter for resource URI attribute */
+    ResourceSet.prototype.withURI = function(URI){
+        this.uri = URI;
+    };
+
+    /* Setter for rsid attribute */
+    ResourceSet.prototype.setRsid = function(rsid){
+        this.rsid = rsid;
+    };
+
+    /* Getter for name attribute */
+    ResourceSet.prototype.getName = function(){
+        return this.name;
+    };
+
+    /* Getter for Type attribute */
+    ResourceSet.prototype.getType = function(){
+        return this.type;
+    };
+
+    /* Getter for Scope attribute */
+    ResourceSet.prototype.getScope = function(){
+        return this.scopes;
+    };
+
+    /* Getter for icon URI attribute */
+    ResourceSet.prototype.getIcon = function(){
+        return this.icon_uri;
+    };
+
+    /* Getter for resource URI attribute */
+    ResourceSet.prototype.getURI = function(){
+        return this.uri;
+    };
+
+    /* Getter for rsid attribute */
+    ResourceSet.prototype.getRsid = function(){
+        return this.rsid;
     };
 
     return {

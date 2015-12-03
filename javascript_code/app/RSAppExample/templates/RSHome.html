@@ -4,10 +4,14 @@
     </header>
     <!-- Introduce RS to UMA AS (get a PAT) -->
     <button ng-click="protectResources()">Protect Your CPAP Reports with UMA</button>
+    <div ng-show="show">
+        <!-- If the clicked protect a link should be here that is the redirect uri to the AS to manage perms -->
+        You are now protected with UMA. To view and control your permissions click here:
+    </div>
     </br></br>
-    <!-- run tests to show resource set registration functionality -->
-    <button ng-click="testResourceReg()">Test Resource Set Registration</button>
-    </br></br>
+    <!-- Just fluff -->
     <button ng-click="viewReports()">View and Manage Your CPAP Reports</button>
+    </br></br>
+    <button ng-click="returnHome()">Return Home</button>
     </br></br>
 </section>

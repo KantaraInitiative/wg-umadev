@@ -1,0 +1,42 @@
+<section id="testRSRegSection">
+    <header>
+        <h1>Testing Resource Set Registration Success:</h1>
+    </header>
+    <h3>Create results of initial create - Should display the rsid for each created resource</h3>
+    <section id="testCreateSection" ng-repeat="result in createdResults track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    <h3>Read results of initial create - Should display the resource sets registered</h3>
+    <section id="testReadAfterCreateSection" ng-repeat="result in readCreatedResults track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    <h3>List result of initial create - Should display a list of rsids for the previously registered resources</h3>
+    <section id="testListAfterCreateSection" ng-repeat="result in listCreatedResult track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    <h3>Update result of an updated resource - Should display the rsid for the updated resource</h3>
+    <section id="testUpdateSection" ng-repeat="result in updateResult track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    <h3>Read the updated resource - Should now display the updated resource "type" as "changingTypeForTest"</h3>
+    <section id="testReadAfterUpdateSection" ng-repeat="result in readUpdateResult track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    <h3>Delete the resource just updated - Should display No Content</h3>
+    <section id="testDeleteSection" ng-repeat="result in deleteResult track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    <h3>List the protected rsids - Should now only be the rsids displayed with the deleted one no longer included</h3>
+    <section id="testListAfterDeleteSection" ng-repeat="result in listAfterDeleteResult track by $index">
+        {{result}}
+        </br></br>
+    </section>
+    </br>
+    <button ng-click="return()">Return</button>
+</section>

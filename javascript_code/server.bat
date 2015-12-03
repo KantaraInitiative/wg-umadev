@@ -1,1 +1,1 @@
-node scripts\web-server.js
+node UMA_Node\UMAResourceServer.js
