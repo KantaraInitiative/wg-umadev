@@ -19,26 +19,6 @@ UMAAngular.factory('ASEndpoints', function($http){
         permissionRegistrationEndpoint: ''
     };
 
-    //var setRequestProtectionEP = function(RequestProtectionEndpoint){
-    //    console.log(RequestProtectionEndpoint);
-    //    requestProtectionEndpoint = RequestProtectionEndpoint;
-    //};
-    //
-    //var setRSRegEP = function(ResourceRegistrationEndpoint){
-    //    console.log(ResourceRegistrationEndpoint);
-    //    resourceRegistrationEndpoint = ResourceRegistrationEndpoint;
-    //};
-    //
-    //var setIntrospectionEP = function(IntrospectionEndpoint){
-    //    console.log(IntrospectionEndpoint);
-    //    introspectionEndpoint = IntrospectionEndpoint;
-    //};
-    //
-    //var setPermissionRegEP = function(PermissionRegistrationEndpoint){
-    //    console.log(PermissionRegistrationEndpoint);
-    //    permissionRegistrationEndpoint = PermissionRegistrationEndpoint;
-    //};
-
     // Retrieve endpoint values that we need
     var setEndpoints = function(responseJSON){
         endpoints['requestProtectionEndpoint'] = responseJSON['token_endpoint'];
