@@ -2,14 +2,14 @@
 * API is still in design phase. 
 * For now I have set up basic HTTP functionality so that a template may already be in place.
   
-* Example front end app to show API functionality and Node/Angular interaction is in progress -
-* I felt that it was important to leave it included it for examples of how the code works with a UI
+* Example front end app to show API functionality and Node/Angular interaction is in progress 
+  - I felt that it was important to leave it included it for examples of how the code works with a UI
 
 ##I have duplicated modules across Node and Angular for the following reasons:
 * Although both are JavaScript, Angular is front-end and Node is server-side.
 * They do not like to play well together without the help of libraries like [Browserify](http://browserify.org/) to handle dependencies across the two.
  - [Browserify](http://browserify.org/) can be helpful helpful, but I did not want to assume that all RS implementations would be using it.
-* Therefor I created them both so that the implementer may pick and choose which modules they need based on their use case,
+* Therefore I created them both so that the implementer may pick and choose which modules they need based on their use case,
 or leave some out if they want to use tools like [Browserify](http://browserify.org/).
 * Angular introspection and permissionRegistration may be completely redundant as I do not see how one would handle
 external requests for resources from the FE. Possibly if more requests were handled from a UI and error messages are sent to a page vs. sending a response
@@ -47,10 +47,6 @@ external requests for resources from the FE. Possibly if more requests were hand
 * There are multiple comments about questions I am having or issues I am facing.
     - I will attempt to document these at a future time
     - to-do items are marked and commented throughout
-
+* Confirm fail safe in all cases
 * Resolving hardcoding
-
 * Optimize function calls etc.
-
-* The angular app is not running from node server, only from local by running index.html. It does load the title but nothing else.
-I am thinking it is a pathing issue in the app setup in UMAResourceServer. It was working before I re-organized files.
