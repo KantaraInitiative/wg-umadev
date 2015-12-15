@@ -1,16 +1,11 @@
 /**
- * Created by kfgonzal on 10/6/2015.
+ * Created by K-Gonzalez on 10/6/2015.
  */
 'use strict';
 
 // will be a separate "class"/factory for endpoints once they are read from config
 UMAAngular.factory('ASEndpoints', function($http){
     var aSConfigEndpoint = 'http://localhost:8100/uma-configuration';//https://as.example.com/uma-configuration";
-
-    var requestProtectionEndpoint = '',
-        resourceRegistrationEndpoint = '',
-        introspectionEndpoint = '',
-        permissionRegistrationEndpoint = '';
 
     var endpoints = {
         requestProtectionEndpoint: '',
@@ -43,11 +38,8 @@ UMAAngular.factory('ASEndpoints', function($http){
                 console.log('success response: ' + JSON.stringify(response.data));
                 setEndpoints(response.data);
             },
-            function(response) {
-                console.log('ERROR: ' + response.status + " " + response.statusText);
-            },
-            function(response) {
-                console.log('notify response: ' + response);
+            function(err) {
+                console.log('ERROR: ' + err.status + " " + err.statusText);
             });
         return promise;
     };

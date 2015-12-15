@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 11/2/2015.
+ * Created by K-Gonzalez on 11/2/2015.
  */
 
 // Mimic DB functionality for resource sets until figure out actual storage example, such as MongoDB

@@ -1,0 +1,75 @@
+#testRSRegSection {
+    /*overflow-y: scroll;*/
+    /*overflow-x: hidden;*/
+}
+#testRSRegSection > header {
+    height: 100%;
+    width: 100%;
+    border: none;
+    margin: 0 auto;
+}
+#testRSRegSection > header > h1 {
+    font-size: 26px;
+}
+#testRSRegSection > header > h2 {
+    line-height: 30px;
+    font-size: 26px;
+    margin-top: 0;
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+#testRSRegSection > header > section {
+    width: 100%;
+    border-top: 3px dashed rgba(56, 57, 97, .7);
+}
+#testRSRegSection > header > section > h3 {
+    padding-left: 10px;
+}
+#testRSRegSection > header > section > ul {
+    list-style-type: decimal;
+    width: 100%;  }
+#testRSRegSection > header > section > ul > li {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    color: #3B1F2B;
+}
+#testRSRegSection > section {
+    height: 100%;
+    /*overflow-y: scroll;*/
+    /*overflow-x: hidden;*/
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #FBFCED;
+}
+#testRSRegSection > section > h3 {
+    line-height: 30px;
+    background-color: #3B1F2B;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #FBFCED;
+    padding-left: 10px;
+}
+#testRSRegSection > section > p{
+    padding-left: 10px;
+}
+#testRSRegSection > footer {
+    text-align: right;
+    background-color: #3B1F2B;
+}
+#testRSRegSection > footer > i {
+    font-size: 38px;
+    line-height: 38px;
+    padding-right: 10px;
+    color: #D14F4F;
+    transition: color 0.29s ease-in-out 0s;
+    cursor: pointer;
+}
+#testRSRegSection > footer > i:hover {
+    font-size: 40px;
+    line-height: 40px;
+    color: #FAFCE3;
+}

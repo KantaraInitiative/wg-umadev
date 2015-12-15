@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 11/18/2015.
+ * Created by K-Gonzalez on 11/18/2015.
  */
 /*
  *  The resource server defines a resource set that the authorization server needs to be aware of by registering a resource set description at the authorization server.

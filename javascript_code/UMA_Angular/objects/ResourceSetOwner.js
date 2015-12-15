@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 10/6/2015.
+ * Created by K-Gonzalez on 10/6/2015.
  */
 // Not sure on this
 // Struggling with best way to relate PAT to RO
@@ -41,6 +41,9 @@ UMAAngular.factory('ResourceSetOwner', function(rsRegistration){
         return rsRegistration.listAll(this.PAT).then(
             function(response){
                 return response.data;
+            },
+            function(err){
+                console.log("ERROR - listAllProtectedResources - ERROR msg: " + err);
             });
     };
 
@@ -52,6 +55,9 @@ UMAAngular.factory('ResourceSetOwner', function(rsRegistration){
             function(response){
                 resourceSet.setRsid(response.data["_id"]);
                 return response.data['_id'];
+            },
+            function(err){
+                console.log("ERROR - createProtectedResource - ERROR msg: " + err);
             });
     };
 
@@ -63,6 +69,9 @@ UMAAngular.factory('ResourceSetOwner', function(rsRegistration){
         return rsRegistration.readRS(this.PAT, rsid).then(
             function(response){
                 return response.data['resource_set'];
+            },
+            function(err){
+                console.log("ERROR - readProtectedResource - ERROR msg: " + err);
             });
     };
 
@@ -77,14 +86,24 @@ UMAAngular.factory('ResourceSetOwner', function(rsRegistration){
             function(response){
                 resourceSet.setRsid(response.data['_id']);
                 return response.data['_id'];
+            },
+            function(err){
+                console.log("ERROR - updateProtectedResource - ERROR msg: " + err);
             });
     };
 
     /* Returns the promise from rs.Registration.deleteRS
-     * Allows the implementer the ability to use any promise chain if needed
      * */
     RSOwner.prototype.deleteProtectedResource = function(rsid){
-        return rsRegistration.deleteRS(this.PAT, rsid);
+        return rsRegistration.deleteRS(this.PAT, rsid).then(
+            function(response){
+                //Allows the implementer the ability to use any promise chain if needed
+                console.log("SUCCESS - deleteProtectedResource");
+                return response;
+            },
+            function(err){
+                console.log("ERROR - deleteProtectedResource - ERROR msg: " + err);
+            });
     };
 
     /* Setter for id attribute */

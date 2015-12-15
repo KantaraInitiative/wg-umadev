@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 10/14/2015.
+ * Created by K-Gonzalez on 10/14/2015.
  */
 var introspection = require('./authorizationServer/protectionAPI/introspection'),
     permissionReg = require('./authorizationServer/protectionAPI/permissionRegistration'),
@@ -36,7 +36,14 @@ module.exports = {
                 // and get PAT for ResourceOwner
 
                 /* Register permission for resource request */
-                permissionReg.register(rsid, scopes, fakePAT, res);
+                permissionReg.register(rsid, scopes, fakePAT, res).then(
+                    function(response){
+                        // Add any unique RS permissionReg handling here
+                    },
+                    function(err){
+                        // permissionReg should have already failed safely and responded to client if failed
+                        console.log("ERROR: Unable to permissionReg. ERROR msg: " + err);
+                    });
             } else if (auth.indexOf('Bearer') === -1) {
                 // There was an auth header but it isn't a Bearer profile
                 console.log('ERROR - Client Resource Request - 403: Invalid Authorization Header Format: ' + auth);
@@ -53,17 +60,22 @@ module.exports = {
 
                 /* Introspect the token */
                 // TODO: get real PAT to send for auth header
-                introspection.introspectToken(token, fakePAT, rsid, res).then(function(response){
-                    var permissions = response.body['permissions'];
-                    // TODO: This chunk below has to be handled by RS implementor because they need to handle retrieving and providing the correct resource
-                    for(var i = 0; i < permissions.length; i++){// TODO: more efficient way to find nested JSON?
-                        if(rsid === permissions[i]['resource_set_id']){
-                            res.status(200).send(permissions[i]); // TODO: Send properly scoped resource back to client
-                            break;
+                introspection.introspectToken(token, fakePAT, rsid, res).then(
+                    function(response){
+                        var permissions = response.body['permissions'];
+                        // TODO: This chunk below has to be handled by RS implementor because they need to handle retrieving and providing the correct resource
+                        for(var i = 0; i < permissions.length; i++){// TODO: more efficient way to find nested JSON?
+                            if(rsid === permissions[i]['resource_set_id']){
+                                res.status(200).send(permissions[i]); // TODO: Send properly scoped resource back to client
+                                break;
+                            }
                         }
-                    }
-                    // TODO: send 403 forbidden if rsid was not found in permissions...register permission now?
-                });
+                        // TODO: send 403 forbidden if rsid was not found in permissions...register permission now?
+                    },
+                    function(err){
+                        // Introspect should have already failed safely and responded to client if failed
+                        console.log("ERROR: Unable to introspectToken. ERROR msg: " + err);
+                    });
             }
         }else{
             // there was no rsid provided

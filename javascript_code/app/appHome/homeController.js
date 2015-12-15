@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 11/19/2015.
+ * Created by K-Gonzalez on 11/19/2015.
  */
 
 app.controller('homeController', function($scope, $location){

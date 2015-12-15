@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 11/2/2015.
+ * Created by K-Gonzalez on 11/2/2015.
  */
 
 // Service for testing basic AS API calls used by the test page controller to display results
@@ -16,14 +16,15 @@ app.factory('testRSReg', function($timeout, $location, $http, $q, rSOwnerImitati
         updateResult = [],
         listCreatedResult = [],
         listAfterDeleteResult = [],
-        deleteResult = [];
+        deleteResult = [],
+        allResources = [];
 
     var testResReg = function(){
         var testIndex = 0;
         var testOwner = rSOwnerImitationDatabase.getRSOwnerById('1234');
 
         // Get all resources from "DB" for this user
-        var allResources = resourceSetImitationDatabase.getAllResourcesOfClient(testOwner.id);
+        allResources = resourceSetImitationDatabase.getAllResourcesOfClient(testOwner.id);
 
         var initResRegTest = function(){
             // Cascades from doCreate
@@ -147,6 +148,9 @@ app.factory('testRSReg', function($timeout, $location, $http, $q, rSOwnerImitati
         },
         getDeletedResult: function(){
             return deleteResult;
+        },
+        getTestResources: function(){
+            return allResources;
         },
         clearResults: function(){
             createdResults = [];

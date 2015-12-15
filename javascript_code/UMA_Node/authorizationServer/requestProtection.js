@@ -1,5 +1,5 @@
 /**
-* Created by kfgonzal on 11/18/2015.
+* Created by K-Gonzalez on 11/18/2015.
 */
 var requestPromise = require('request-promise'),
     ASEndpoints = require('./authorizationServerEndpoints');
@@ -26,14 +26,12 @@ requestProtectionAPIToken: function(rsOwner) {
     var promise = requestPromise(options);
     promise.then(
         function(response){
-            //TODO: finish
             console.log('success response: ' + body);
             var data = JSON.parse(body);
             rsOwner.setPAT(data['access_token']);// Set with PAT results from successful request
         },
         function(err){
-            console.log(err); // Something went wrong other than something like 404, 403, 401..more like connection error, host error
-            //res.send(500, 'Server Error');
+            console.log(err); // Something went wrong
             res.status(500).send('Server Error'); //TODO: complete error responses
         });
     return promise;

@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 10/6/2015.
+ * Created by K-Gonzalez on 10/6/2015.
  */
 
 // Not sure how/why introspection would by used by the front end being as an external client
@@ -86,8 +86,8 @@ UMAAngular.module('introspection').factory('introspect', function($http, ASEndpo
                 }
                 console.log("SUCCESS - Introspection: " + response);
             },
-            function(response){
-                console.log("ERROR - Introspection: " + response.status + " " + response.statusText);
+            function(err){
+                console.log("ERROR - Introspection: " + err.status + " " + err.statusText);
             });
         return promise;
     };

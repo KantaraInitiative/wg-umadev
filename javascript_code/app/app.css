@@ -1,0 +1,117 @@
+/* pallet:
+    #3B1F2B ; rgba(59, 31, 43, 1)
+    #D14F4F ; rgba(209, 79, 79, 1)
+    #FAFCE3 ; rgba(250, 252, 227, 1)
+    #5F758E ; rgba(95, 117, 142, 1)
+    #383961 ; rgba(56, 57, 97, 1)
+*/
+body {
+    border-top: 6px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 6px solid rgba(0, 0, 0, 0.1);
+    background-color: #5F758E;
+}
+
+/* Common styling for ng-views */
+body > ng-view > section{
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+body > ng-view > section > header {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    color: #3B1F2B;
+    background-color: #FBFCED;
+    border: 2px solid #383961;
+    border-radius: 2px;
+    box-shadow: 2px 2px 6px rgba(62, 39, 35, .8);
+    margin-right: 20px;
+}
+body > ng-view > section > header > h1{
+    font-weight: bold;
+    line-height: 87px;
+    font-size: 86px;
+    height: 45px;
+    margin-top: 0;
+    text-align: center;
+    padding-top: 15px;
+}
+body > ng-view > section > section{
+    width: 455px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    background-color: #3B1F2B;
+    border-radius: 2px;
+    height: 325px;
+    border: 2px solid #383961;
+    box-shadow: 2px 2px 6px rgba(62, 39, 35, .8);
+    margin-left: 10px;
+}
+body > ng-view > section > section > header {
+    height: 40px;
+    padding-top: 0;
+    padding-bottom: 10px;
+    vertical-align: bottom;
+}
+body > ng-view > section > section > header > h1{
+    text-align: center;
+    color: #FAFCE3;
+    line-height: 30px;
+    font-size: 26px;
+    padding-top: 5px;
+}
+body > ng-view > section > section > section {
+    border-top: 3px dashed rgba(56, 57, 97, .7);
+    background-color: #FBFCED;
+    height: 200px;
+    color: #3E2723;
+    font-size: 18px;
+}
+body > ng-view > section > section > section > ul{
+    list-style-type: none;
+}
+body > ng-view > section > section > section > ul > li{
+    padding-top: 10px;
+    font-size: 20px;
+    line-height: 20px;
+}
+body > ng-view > section > section > section > ul > li > i.icon{
+    font-size: 38px;
+    line-height: 38px;
+    cursor: pointer;
+    color: #5F758E;
+    vertical-align: bottom;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: 0 3px 3px 1px rgba(0,0,0,0.54);
+    transition: text-shadow 0.29s ease-in-out 0s;
+}
+body > ng-view > section > section > section > ul > li > i.icon:hover{
+    font-size: 40px;
+    line-height: 40px;
+    color: #D14F4F;
+    text-shadow: 0 6px 6px 1px rgba(0,0,0,0.54);
+}
+body > ng-view > section > section > section > ul > li > i.icon:first-child{
+    padding-top: 30px;
+}
+
+body > footer {
+    margin-top: 15px;
+    border: 1px solid #3E2723;
+    box-shadow: 2px 2px 6px rgba(62, 39, 35, .8);
+    background-color: #3B1F2B;
+    color: #FAFCE3;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+body > footer > a {
+    color: #D14F4F;
+}
+body > footer > a:hover {
+    color: #FAFCE3;
+}

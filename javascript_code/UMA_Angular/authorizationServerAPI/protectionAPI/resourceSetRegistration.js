@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 10/6/2015.
+ * Created by K-Gonzalez on 10/6/2015.
  */
 'use strict';
 
@@ -40,8 +40,8 @@ UMAAngular.factory('rsRegistration', function($http, ASEndpoints) {
                     console.log('CREATE - SUCCESS: ' + response.status + ' '  + response.statusText);
                     console.log("Data: " + response.data);
                 },
-                function(response){
-                    console.log('CREATE - ERROR: ' + response.status + ' ' + response.statusText);
+                function(err){
+                    console.log('CREATE - ERROR: ' + err.status + ' ' + err.statusText);
                 });
             return promise;
         },
@@ -61,8 +61,8 @@ UMAAngular.factory('rsRegistration', function($http, ASEndpoints) {
                     console.log('READ - SUCCESS: ' + response.status + ' ' + response.statusText);
                     console.log('Data: ' + response.data);
                 },
-                function(response){
-                    console.log('READ - ERROR: ' + response.status + ' ' + response.statusText);
+                function(err){
+                    console.log('READ - ERROR: ' + err.status + ' ' + err.statusText);
                 });
             return promise;
         },
@@ -84,8 +84,8 @@ UMAAngular.factory('rsRegistration', function($http, ASEndpoints) {
                     console.log('UPDATE - SUCCESS: ' + response.status + ' ' + response.statusText);
                     console.log("Data: " + response.data);
                 },
-                function(response){
-                    console.log('UPDATE - ERROR: ' + response.status + ' ' + response.statusText);
+                function(err){
+                    console.log('UPDATE - ERROR: ' + err.status + ' ' + err.statusText);
                 });
             return promise;
         },
@@ -105,8 +105,8 @@ UMAAngular.factory('rsRegistration', function($http, ASEndpoints) {
                     console.log('DELETE - SUCCESS: ' + response.status + ' ' + response.statusText);
                     console.log('Data: ' + response.data);
                 },
-                function(response){
-                    console.log('DELETE - ERROR: ' + response.status + ' ' + response.statusText);
+                function(err){
+                    console.log('DELETE - ERROR: ' + err.status + ' ' + err.statusText);
                 });
             return promise;
         },
@@ -126,8 +126,8 @@ UMAAngular.factory('rsRegistration', function($http, ASEndpoints) {
                     console.log('LIST - SUCCESS: ' + response.status + ' ' + response.statusText);
                     console.log('Data: ' + response.data);
                 },
-                function(response){
-                    console.log('LIST - ERROR: ' + response.status + ' ' + response.statusText);
+                function(err){
+                    console.log('LIST - ERROR: ' + err.status + ' ' + err.statusText);
                 });
             return promise;
         }

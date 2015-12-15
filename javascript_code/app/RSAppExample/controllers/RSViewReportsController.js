@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 10/26/2015.
+ * Created by K-Gonzalez on 10/26/2015.
  */
 
 /* Just an example to display resource set information to the user and to show API functionality.
@@ -9,13 +9,14 @@
 */
 app.controller('RSViewReportsController', function($scope, $location, resourceSetImitationDatabase) {
 
-    $scope.reports = resourceSetImitationDatabase.getAllResourcesOfClient('1234'); // Fake user ID as input
+    $scope.reports = resourceSetImitationDatabase.getAllResourcesOfClient('1234'); // Fake user ID I know I have stored as input
 
     $scope.return = function(){
       $location.path('/exampleRS');
     };
 
-    $scope.openReport = function(){
-      // Just a fake method
+    $scope.openReport = function(report){
+        // Just a fake method for now
+        // Should open a page with a fake report
     };
 });

@@ -1,13 +1,47 @@
 <section id="home">
     <header>
-        <h1>Welcome to UMA Resource Server activities performed with JavaScript (Node and AngularJS)</h1>
+        <h1>UMA</h1>
+        <p>
+            <a href="http://kantarainitiative.org/confluence/display/uma/Home" target="_blank">User Managed Access</a>
+        </p>
+        <h2><mark>Resource Server</mark>  activities performed with <mark>UMA</mark> frameworks that are built with <mark>Node</mark> and <mark>AngularJS</mark></h2>
+        <!-- Include some info on which modules of each framework were used for the demos -->
+        <section>
+            <h2>UMA modules utilized in the examples:</h2>
+            <section>
+                <h3>UMA_Angular:</h3>
+                <ul>
+                    <li>ProtectedResourceSet.js</li>
+                    <li>ResourceSetOwner.js</li>
+                    <li>requestProtection.js</li>
+                    <li>authorizationServerEndpoints.js</li>
+                    <li>resourceSetRegistration.js</li>
+                </ul>
+                <h3>UMA_Node:</h3>
+                <ul>
+                    <li>authorizationServerEndpoints.js</li>
+                    <li>introspection.js</li>
+                    <li>permissionRegistration.js</li>
+                </ul>
+            </section>
+        </section>
+
     </header>
-    <!-- Go the the resource server example -->
-    <button ng-click="navigateToExampleRS()">View an example Resource Server</button>
-    </br></br>
-    <!-- 'Test' page to show UMA interactions -->
-    <button ng-click="navigateToTests()">Navigate to a test page to perform UMA related tests</button>
-    </br></br>
-    <!-- To contribute and access the code -->
-    <!-- Link to gitHub -->
+    <section>
+        <header>
+            <h1>Things you can do</h1>
+        </header>
+        <Section>
+            <ul>
+                <li>
+                    <!-- Go the the resource server example -->
+                    <i ng-click="navigateToExampleRS()" class="icon material-icons">cloud_circle</i>View an example Resource Server
+                </li>
+                <li>
+                    <!-- 'Test' page to show UMA interactions -->
+                    <i ng-click="navigateToTests()" class="icon material-icons">repeat</i>Perform interactions with an AS
+                </li>
+            </ul>
+        </Section>
+    </section>
 </section>

@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 11/18/2015.
+ * Created by K-Gonzalez on 11/18/2015.
  */
 // will be a separate "class"/factory for endpoints once they are read from config
 

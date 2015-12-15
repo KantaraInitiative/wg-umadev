@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 10/20/2015.
+ * Created by K-Gonzalez on 10/20/2015.
  */
 
 var requestPromise = require('request-promise'),

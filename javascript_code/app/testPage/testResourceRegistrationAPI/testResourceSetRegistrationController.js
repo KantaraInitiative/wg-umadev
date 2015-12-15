@@ -1,8 +1,9 @@
 /**
- * Created by kfgonzal on 11/2/2015.
+ * Created by K-Gonzalez on 11/2/2015.
  */
 
 app.controller('testResourceSetRegistrationController', function($scope, $location, $timeout, testRSReg){
+    $scope.testResources = testRSReg.getTestResources();
 
     $scope.createdResults = testRSReg.getCreatedResults();
 

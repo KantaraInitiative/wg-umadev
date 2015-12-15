@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 10/6/2015.
+ * Created by K-Gonzalez on 10/6/2015.
  */
 'use strict';
 
@@ -37,8 +37,8 @@ UMAAngular.factory('permReg', function($http, ASEndpoints){
                 console.log("SUCCESS - permissionRegistration: " + response);
                 // How to communicate ticket from FE? store and act on behalf of client?
             },
-            function(response){
-                console.log("ERROR - permissionRegistration: " + response.status + " " + response.statusText);
+            function(err){
+                console.log("ERROR - permissionRegistration: " + err.status + " " + err.statusText);
                 // Navigate to an error page?
             });
         return promise;

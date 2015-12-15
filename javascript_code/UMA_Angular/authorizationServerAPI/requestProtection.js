@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 10/6/2015.
+ * Created by K-Gonzalez on 10/6/2015.
  */
 'use strict';
 
@@ -32,8 +32,8 @@ UMAAngular.factory('protectionReq', function($http, ASEndpoints) {
                     console.log('success response: ' + JSON.stringify(response.data));
                     return response;
                 },
-                function(response){
-                    console.log('ERROR: ' + response.status + ' ' + response.statusText);
+                function(err){
+                    console.log('ERROR: ' + err.status + ' ' + err.statusText);
                 });
             return promise;
         }

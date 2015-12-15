@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 10/18/2015.
+ * Created by K-Gonzalez on 10/18/2015.
  */
 
 var requestPromise = require('request-promise'),
@@ -35,9 +35,14 @@ introspectToken: function (token, PAT, rsid, res) {
                 var active = data['active'];                // REQUIRED Boolean indicator of token active status
                 if (active === false) {
                     var scopes = []; // Fake scopes
-                    permissionReg.register(rsid, scopes, PAT, res);
-                    // Register a request and return forbidden 403, with ticket and uri
-                    // inside register, pass the res and call res.send() with 403, ticket etc.
+                    permissionReg.register(rsid, scopes, PAT, res).then(
+                        function(response){
+                            // Add any unique RS permissionReg handling here
+                        },
+                        function(err){
+                            // permissionReg should have already failed safely and responded to client if failed
+                            console.log("ERROR: Unable to permissionReg. ERROR msg: " + err);
+                        });
                 }
                 else if (active === true) {
                     var permissions = data['permissions'],  // REQUIRED array of 0 or more permission values, replaces 'scope'

@@ -1,5 +1,5 @@
 /**
- * Created by kfgonzal on 11/18/2015.
+ * Created by K-Gonzalez on 11/18/2015.
  */
 // I return the promise, in case the implementer needs to manipulate the sequence of occurring calls based on promises
 // For example, for some reason they create all sets then immediately want to update all sets.
