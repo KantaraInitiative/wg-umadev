@@ -8,10 +8,10 @@ UMAAngular.factory('ASEndpoints', function($http){
     var aSConfigEndpoint = 'http://localhost:8100/uma-configuration';//https://as.example.com/uma-configuration";
 
     var endpoints = {
-        requestProtectionEndpoint: '',
-        resourceSetRegistrationEndpoint: '',
-        introspectionEndpoint: '',
-        permissionRegistrationEndpoint: ''
+        'requestProtectionEndpoint': '',
+        'resourceSetRegistrationEndpoint': '',
+        'introspectionEndpoint': '',
+        'permissionRegistrationEndpoint': ''
     };
 
     // Retrieve endpoint values that we need
@@ -39,56 +39,24 @@ UMAAngular.factory('ASEndpoints', function($http){
                 setEndpoints(response.data);
             },
             function(err) {
-                console.log('ERROR: ' + err.status + " " + err.statusText);
+                console.log('ERROR: ' + err.status);
             });
         return promise;
     };
 
     return {
         getConfig: getConfig,
-        // Trying to avoid having to make the call each time if values are saved from before
-        // But seems to be calling each time anyway
         getRequestProtectionEP: function(){
-            if (endpoints['requestProtectionEndpoint'] !== '') {
-                return endpoints['requestProtectionEndpoint'];
-            }
-            else {
-                return getConfig().then(function(){
-                    // should already respond to error and fail safely
-                    return endpoints['requestProtectionEndpoint'];
-                });
-            }
+            return endpoints['requestProtectionEndpoint'];
         },
         getRSRegEP: function() {
-            if (endpoints['resourceSetRegistrationEndpoint'] !== '') {
-                return endpoints['resourceSetRegistrationEndpoint'];
-            }
-            else {
-                return getConfig().then(function(){
-                    // should already respond to error and fail safely
-                    return endpoints['resourceSetRegistrationEndpoint'];
-                });
-            }
+            return endpoints['resourceSetRegistrationEndpoint'];
         },
         getPermissionRegEP: function() {
-            if (endpoints['permissionRegistrationEndpoint'] !== '') {
-                return endpoints['permissionRegistrationEndpoint'];
-            }
-            else {
-                return getConfig().then(function(){
-                    return endpoints['permissionRegistrationEndpoint'];
-                });
-            }
+            return endpoints['permissionRegistrationEndpoint'];
         },
         getIntrospectionEP: function() {
-            if (endpoints['introspectionEndpoint'] !== '') {
-                return endpoints['introspectionEndpoint'];
-            }
-            else {
-                return getConfig().then(function(){
-                    return endpoints['introspectionEndpoint'];
-                });
-            }
+            return endpoints['introspectionEndpoint'];
         }
     };
 });

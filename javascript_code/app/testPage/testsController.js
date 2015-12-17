@@ -2,9 +2,8 @@
  * Created by K-Gonzalez on 11/19/2015.
  */
 
-app.controller('testsController', function($scope, $location, testRSReg){
+app.controller('testsController', function($scope, $location){
     $scope.testResourceReg = function(){
-        testRSReg.testResReg();
         $location.path('/testResReg');
     };
 

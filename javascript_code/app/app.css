@@ -115,3 +115,7 @@ body > footer > a {
 body > footer > a:hover {
     color: #FAFCE3;
 }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}

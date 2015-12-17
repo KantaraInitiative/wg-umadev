@@ -9,7 +9,6 @@
 var app = angular.module('app', ['ngRoute', 'UMAAngular']);
 
 app.config(function($routeProvider) {
-
     $routeProvider.
         when('/', {
             templateUrl: 'appHome/home.html',

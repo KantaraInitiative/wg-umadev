@@ -9,10 +9,7 @@
 UMAAngular.factory('rsRegistration', function($http, ASEndpoints) {
 
     // Use this for the endpoint throughout the module
-    var resourceSetRegistrationEP = '';
-    ASEndpoints.getRSRegEP().then(function(endpoint){
-        resourceSetRegistrationEP = endpoint;
-    });
+    var resourceSetRegistrationEP = ASEndpoints.getRSRegEP();
 
     /**
      * Use future buildRequest utils or helper method for REST requests

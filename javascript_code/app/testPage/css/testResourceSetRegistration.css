@@ -9,7 +9,9 @@
     margin: 0 auto;
 }
 #testRSRegSection > header > h1 {
-    font-size: 26px;
+    font-size: 34px;
+    line-height: 36px;
+    padding-top: 20px;
 }
 #testRSRegSection > header > h2 {
     line-height: 30px;
@@ -28,7 +30,6 @@
     padding-left: 10px;
 }
 #testRSRegSection > header > section > ul {
-    list-style-type: decimal;
     width: 100%;  }
 #testRSRegSection > header > section > ul > li {
     padding-left: 10px;
@@ -38,20 +39,38 @@
 }
 #testRSRegSection > section {
     height: 100%;
-    /*overflow-y: scroll;*/
-    /*overflow-x: hidden;*/
     border: none;
     margin: 0 auto;
     width: 100%;
     background-color: #FBFCED;
 }
 #testRSRegSection > section > h3 {
+    font-size: 20px;
     line-height: 30px;
     background-color: #3B1F2B;
     margin-top: 0;
-    margin-bottom: 0;
     color: #FBFCED;
     padding-left: 10px;
+    padding-bottom: 20px;
+}
+.disabled_play {
+    font-size: 38px;
+    line-height: 38px;
+    padding: 15px 10px 0 10px;
+    margin-bottom: 0;
+    color: rgba(95, 117, 142, 1);
+}
+.play {
+    font-size: 38px;
+    line-height: 38px;
+    padding: 15px 10px 0 10px;
+    margin-bottom: 0;
+    cursor: pointer;
+    color: #D14F4F;
+    transition: color 0.29s ease-in-out 0s;
+}
+.play:hover {
+    color: #FAFCE3;
 }
 #testRSRegSection > section > p{
     padding-left: 10px;

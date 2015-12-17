@@ -4,10 +4,8 @@
 'use strict';
 
 UMAAngular.factory('protectionReq', function($http, ASEndpoints) {
-    var authorizationEP = '';
-    ASEndpoints.getRequestProtectionEP().then(function(endpoint){
-        authorizationEP = endpoint;
-    });
+    var authorizationEP = ASEndpoints.getRequestProtectionEP();
+
     console.log("authorization EP: " + authorizationEP);
     return {
         // Request Protection API Token

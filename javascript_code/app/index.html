@@ -41,14 +41,13 @@
         <!-- Test Pages -->
         <script src="testPage/testsController.js"></script>
         <script src="testPage/testResourceRegistrationAPI/testResourceSetRegistrationController.js"></script>
-        <script src="testPage/testResourceRegistrationAPI/testRSReg.js"></script>
 
         <!-- Just storage of some fake ResourceSetOwner and protectedResourceSet Objects -->
         <script src="imitationDatabases/resourceSetImitationDatabase.js"></script>
         <script src="imitationDatabases/rSOwnerImitationDatabase.js"></script>
     </head>
     <body>
-        <ng-view></ng-view>
+        <ng-view ng-cloak=""></ng-view>
         <!-- To contribute and access the code -->
         <!-- Link to gitHub -->
         <footer>

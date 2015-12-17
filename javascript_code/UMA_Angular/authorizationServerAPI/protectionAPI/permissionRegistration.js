@@ -8,10 +8,7 @@
 UMAAngular.factory('permReg', function($http, ASEndpoints){
 
     // Use this for the endpoint throughout the module
-    var permissionRegistrationEP = '';
-    ASEndpoints.getPermissionRegEP().then(function(endpoint){
-        permissionRegistrationEP = endpoint;
-    });
+    var permissionRegistrationEP = ASEndpoints.getPermissionRegEP();
 
     /**
      * Use future buildRequest utils or helper method for REST methods

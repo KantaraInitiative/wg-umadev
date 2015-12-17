@@ -9,10 +9,7 @@
 UMAAngular.module('introspection').factory('introspect', function($http, ASEndpoints, permissionRegistration){
 
     // Use this for the endpoint throughout the module
-    var introspectionEP = '';
-    ASEndpoints.getIntrospectionEP().then(function(endpoint){
-        introspectionEP = endpoint;
-    });
+    var introspectionEP = ASEndpoints.getIntrospectionEP();
 
     /**
      * Use future buildRequest utils or helper method for REST methods
