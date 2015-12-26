@@ -3,7 +3,7 @@
 * For now I have set up basic HTTP functionality so that a template may already be in place.
   
 * Example front end app to show API functionality and Node/Angular interaction is in progress 
-  - I felt that it was important to leave it included it for examples of how the code works with a UI
+  - I felt that it was important to leave it included for examples of how the modules works with a UI
 
 ##I have duplicated modules across Node and Angular for the following reasons:
 * Although both are JavaScript, Angular is front-end and Node is server-side.

@@ -10,64 +10,66 @@
         </section>
     </header>
     <section>
-        <h3>
-            <i ng-hide="showCreatePlay" class="disabled_play material-icons">play_arrow</i>
-            <i ng-show="showCreatePlay" class="play material-icons" ng-click="handleCreate()">play_arrow</i>
-            CREATE - Should display the rsid for each created resource
-        </h3>
-        <p id="testCreateSection" ng-repeat="result in createdResults track by $index">
-            {{result}}
-        </p>
-        <h3>
-            <i ng-hide="showReadCreatedPlay" class="disabled_play material-icons">play_arrow</i>
-            <i ng-show="showReadCreatedPlay" class="play material-icons" ng-click="handleReadCreated()">play_arrow</i>
-            READ - Should display the resource sets registered
-        </h3>
-        <p id="testReadAfterCreateSection" ng-repeat="result in readCreatedResults track by $index">
-            {{result}}
-        </p>
-        <h3>
-            <i ng-hide="showListCreatedPlay" class="disabled_play material-icons">play_arrow</i>
-            <i ng-show="showListCreatedPlay" class="play material-icons" ng-click="handleListCreated()">play_arrow</i>
-            LIST - Should display a list of rsids for the previously registered resources
-        </h3>
-        <p id="testListAfterCreateSection" ng-repeat="result in listCreatedResult track by $index">
-            {{result}}
-        </p>
-        <h3>
-            <i ng-hide="showUpdatePlay" class="disabled_play material-icons">play_arrow</i>
-            <i ng-show="showUpdatePlay" class="play material-icons" ng-click="handleUpdate()">play_arrow</i>
-            UPDATE - 'type' of 1st resource to 'changingTypeForTest' - Should display the rsid
-        </h3>
-        <p id="testUpdateSection" ng-repeat="result in updateResult track by $index">
-            {{result}}
-        </p>
-        <h3>
-            <i ng-hide="showReadUpdatePlay" class="disabled_play material-icons">play_arrow</i>
-            <i ng-show="showReadUpdatePlay" class="play material-icons" ng-click="handleReadAfterUpdate()">play_arrow</i>
-            READ - Should now display the updated resource 'type' as 'changingTypeForTest'
-        </h3>
-        <p id="testReadAfterUpdateSection" ng-repeat="result in readUpdateResult track by $index">
-            {{result}}
-        </p>
-        <h3>
-            <i ng-hide="showDeletePlay" class="disabled_play material-icons">play_arrow</i>
-            <i ng-show="showDeletePlay" class="play material-icons" ng-click="handleDelete()">play_arrow</i>
-            DELETE - Should display No Content
-        </h3>
-        <p id="testDeleteSection" ng-repeat="result in deleteResult track by $index">
-            {{result}}
-        </p>
-        <h3>
-            <i ng-hide="showListAfterDeletePlay" class="disabled_play material-icons">play_arrow</i>
-            <i ng-show="showListAfterDeletePlay" class="play material-icons" ng-click="handleListAfterDelete()">play_arrow</i>
-            LIST - The displayed rsids should no longer included the deleted one
-        </h3>
-        <p id="testListAfterDeleteSection" ng-repeat="result in listAfterDeleteResult track by $index">
-            {{result}}
-        </p>
+        <section>
+            <h3>
+                <i ng-hide="showCreatePlay" class="disabled_play material-icons">play_arrow</i>
+                <i ng-show="showCreatePlay" class="play material-icons" ng-click="handleCreate()">play_arrow</i>
+                CREATE - Should display the rsid for each created resource
+            </h3>
+            <p id="testCreateSection" ng-repeat="result in createdResults track by $index">
+                {{result}}
+            </p>
+            <h3>
+                <i ng-hide="showReadCreatedPlay" class="disabled_play material-icons">play_arrow</i>
+                <i ng-show="showReadCreatedPlay" class="play material-icons" ng-click="handleReadCreated()">play_arrow</i>
+                READ - Should display the resource sets registered
+            </h3>
+            <p id="testReadAfterCreateSection" ng-repeat="result in readCreatedResults track by $index">
+                {{result}}
+            </p>
+            <h3>
+                <i ng-hide="showListCreatedPlay" class="disabled_play material-icons">play_arrow</i>
+                <i ng-show="showListCreatedPlay" class="play material-icons" ng-click="handleListCreated()">play_arrow</i>
+                LIST - Should display a list of rsids for the previously registered resources
+            </h3>
+            <p id="testListAfterCreateSection" ng-repeat="result in listCreatedResult track by $index">
+                {{result}}
+            </p>
+            <h3>
+                <i ng-hide="showUpdatePlay" class="disabled_play material-icons">play_arrow</i>
+                <i ng-show="showUpdatePlay" class="play material-icons" ng-click="handleUpdate()">play_arrow</i>
+                UPDATE - 'type' of 1st resource to 'changingTypeForTest' - Should display the rsid
+            </h3>
+            <p id="testUpdateSection" ng-repeat="result in updateResult track by $index">
+                {{result}}
+            </p>
+            <h3>
+                <i ng-hide="showReadUpdatePlay" class="disabled_play material-icons">play_arrow</i>
+                <i ng-show="showReadUpdatePlay" class="play material-icons" ng-click="handleReadAfterUpdate()">play_arrow</i>
+                READ - Should now display the updated resource 'type' as 'changingTypeForTest'
+            </h3>
+            <p id="testReadAfterUpdateSection" ng-repeat="result in readUpdateResult track by $index">
+                {{result}}
+            </p>
+            <h3>
+                <i ng-hide="showDeletePlay" class="disabled_play material-icons">play_arrow</i>
+                <i ng-show="showDeletePlay" class="play material-icons" ng-click="handleDelete()">play_arrow</i>
+                DELETE - Delete the updated resource - Should display No Content
+            </h3>
+            <p id="testDeleteSection" ng-repeat="result in deleteResult track by $index">
+                {{result}}
+            </p>
+            <h3>
+                <i ng-hide="showListAfterDeletePlay" class="disabled_play material-icons">play_arrow</i>
+                <i ng-show="showListAfterDeletePlay" class="play material-icons" ng-click="handleListAfterDelete()">play_arrow</i>
+                LIST - The displayed rsids should no longer included the deleted one
+            </h3>
+            <p id="testListAfterDeleteSection" ng-repeat="result in listAfterDeleteResult track by $index">
+                {{result}}
+            </p>
+        </section>
+        <footer>
+            <i ng-click="return()" class="icon material-icons">subdirectory_arrow_left</i>
+        </footer>
     </section>
-    <footer>
-        <i ng-click="return()" class="icon material-icons">subdirectory_arrow_left</i>
-    </footer>
 </section>

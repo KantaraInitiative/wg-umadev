@@ -44,7 +44,14 @@
     width: 100%;
     background-color: #FBFCED;
 }
-#testRSRegSection > section > h3 {
+#testRSRegSection > section > section {
+    height: 100%;
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #FBFCED;
+}
+#testRSRegSection > section > section > h3 {
     font-size: 20px;
     line-height: 30px;
     background-color: #3B1F2B;
@@ -72,14 +79,14 @@
 .play:hover {
     color: #FAFCE3;
 }
-#testRSRegSection > section > p{
+#testRSRegSection > section > section > p{
     padding-left: 10px;
 }
-#testRSRegSection > footer {
+#testRSRegSection > section > footer {
     text-align: right;
     background-color: #3B1F2B;
 }
-#testRSRegSection > footer > i {
+#testRSRegSection > section > footer > i {
     font-size: 38px;
     line-height: 38px;
     padding-right: 10px;
@@ -87,7 +94,7 @@
     transition: color 0.29s ease-in-out 0s;
     cursor: pointer;
 }
-#testRSRegSection > footer > i:hover {
+#testRSRegSection > section > footer > i:hover {
     font-size: 40px;
     line-height: 40px;
     color: #FAFCE3;
