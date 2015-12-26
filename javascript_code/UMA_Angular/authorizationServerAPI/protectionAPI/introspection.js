@@ -17,10 +17,10 @@ UMAAngular.module('introspection').factory('introspect', function($http, ASEndpo
     var introspectToken = function(token, PAT, rsid) {
         var req = {
             url: introspectionEP,
-            method: "POST",
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer " + PAT// + PAT token value
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + PAT// + PAT token value
             },
             data: {
                 'token': token

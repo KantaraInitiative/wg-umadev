@@ -19,8 +19,8 @@ UMAAngular.factory('permReg', function($http, ASEndpoints){
             url: permissionRegistrationEP,
             method: 'POST',
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer" + token
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
             },
             data: {
                 'resource_set_id': rsid,
