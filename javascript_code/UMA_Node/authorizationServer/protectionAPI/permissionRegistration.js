@@ -15,7 +15,7 @@ module.exports = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer' + PAT
+                'Authorization': 'Bearer ' + PAT
             },
             body: {
                 'resource_set_id': rsid,
