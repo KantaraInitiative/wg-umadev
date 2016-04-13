@@ -1,0 +1,30 @@
+#RSViewReports > header {
+    width: 100%;
+    height: 100%;
+}
+#RSViewReports > section{
+    width: 480px;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#RSViewReports > section > section {
+    height: 100%;
+    padding-bottom: 10px;
+}
+#RSViewReports > section > footer {
+    text-align: right;
+}
+#RSViewReports > section > footer > i {
+    font-size: 38px;
+    line-height: 38px;
+    padding-right: 10px;
+    color: #D14F4F;
+    transition: color 0.29s ease-in-out 0s;
+    cursor: pointer;
+}
+#RSViewReports > section > footer > i:hover {
+    font-size: 40px;
+    line-height: 40px;
+    color: #FAFCE3;
+}

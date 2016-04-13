@@ -1,0 +1,29 @@
+<section id="RSHome">
+    <header>
+        <h1>Welcome {{rsOwner.name}} To Your CPAP Equipment</h1>
+    </header>
+    <section>
+        <header>
+            <h1>Things you can do</h1>
+        </header>
+        <Section>
+            <ul>
+                <li>
+                    <!-- Introduce RS to UMA AS (get a PAT) -->
+                    <i ng-click="protectResources()" class="icon material-icons">lock</i>Protect Your CPAP Reports with UMA
+                    <p ng-show="show">
+                        <!-- If they clicked protect, a link should be here that is the redirect uri to the AS to manage perms -->
+                        You are now protected with UMA. To view and control your permissions go here:
+                    </p>
+                </li>
+                <li>
+                    <!-- Just fluff -->
+                    <i ng-click="viewReports()" class="icon material-icons">folder</i>View and Manage Your CPAP Reports
+                </li>
+            </ul>
+        </Section>
+        <footer>
+            <i ng-click="returnHome()" class="icon material-icons">home</i>
+        </footer>
+    </section>
+</section>

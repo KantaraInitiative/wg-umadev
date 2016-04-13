@@ -1,0 +1,56 @@
+/* home is the main section */
+#home > header {
+    height: 625px;
+    width: 455px;
+}
+#home > header > p {
+    text-align: center;
+}
+#home > header > p > a {
+    line-height: 30px;
+    font-size: 26px;
+    height: 20px;
+    margin-top: 0;
+    padding-top: 5px;
+    color: #5F758E;
+    text-decoration: none;
+}
+#home > header > p > a:hover {
+    color: #D14F4F;
+}
+
+#home > header > h2{
+    line-height: 30px;
+    font-size: 26px;
+    margin-top: 0;
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px dashed rgba(56, 57, 97, .7);
+}
+#home > header > h2 > mark {
+    color: #D14F4F;
+    background-color: transparent;
+}
+#home > header > h2 > mark:first-child{
+    font-size: 38px;
+    line-height: 40px;
+}
+#home > header > section{
+}
+#home > header > section > h2{
+    padding-left: 10px;
+}
+#home > header > section > section{
+    padding-left: 10px;
+}
+#home > header > section > section > h3 {
+}
+#home > header > section > section > ul {
+    color: #D14F4F;
+    padding-left: 10px;
+}
+#home > header > section > section > ul > li {
+    padding-left: 10px;
+}

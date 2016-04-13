@@ -1,0 +1,14 @@
+{
+  "name": "wg_umadev_angular_node",
+  "private": "true",
+  "version": "0.0.1",
+  "description": "UMA implementation API idea for resource servers",
+  "author": "",
+  "dependencies": {
+    "express": "3.4.2",
+    "angular": "1.4.7",
+    "angular-route": "1.4.7",
+    "body-parser": "1.14.1",
+    "request-promise": "1.0.2"
+  }
+}

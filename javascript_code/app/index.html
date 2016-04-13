@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <title>UMA Resource Server</title>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lobster|Droid+Serif" />
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="app.css"/>
+        <link rel="stylesheet" href="appHome/home.css"/>
+        <link rel="stylesheet" href="RSAppExample/css/RSHome.css"/>
+        <link rel="stylesheet" href="RSAppExample/css/RSViewReports.css"/>
+        <link rel="stylesheet" href="testPage/css/tests.css"/>
+        <link rel="stylesheet" href="testPage/css/testResourceSetRegistration.css"/>
+
+        <!-- Scripts -->
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="../node_modules/angular-route/angular-route.js"></script>
+        <script src="./app.js"></script>
+
+        <!-- Include UMA module -->
+        <script src="../UMA_Angular/UMAAngular.js"></script>
+
+        <!-- UMA Module Objects -->
+        <script src="../UMA_Angular/objects/ResourceSetOwner.js"></script>
+        <script src="../UMA_Angular/objects/ProtectedResourceSet.js"></script>
+
+        <!-- UMA Module AS Protection Services -->
+        <script src="../UMA_Angular/authorizationServerAPI/requestProtection.js"></script>
+        <script src="../UMA_Angular/authorizationServerAPI/protectionAPI/resourceSetRegistration.js"></script>
+        <script src="../UMA_Angular/authorizationServerAPI/authorizationServerEndpoints.js"></script>
+
+        <!-- App Home Controller -->
+        <script src="appHome/homeController.js"></script>
+
+        <!-- RS Application Example Controllers -->
+        <script src="RSAppExample/controllers/RSHomeController.js"></script>
+        <script src="RSAppExample/controllers/RSViewReportsController.js"></script>
+
+        <!-- Test Pages -->
+        <script src="testPage/testsController.js"></script>
+        <script src="testPage/testResourceRegistrationAPI/testResourceSetRegistrationController.js"></script>
+
+        <!-- Just storage of some fake ResourceSetOwner and protectedResourceSet Objects -->
+        <script src="imitationDatabases/resourceSetImitationDatabase.js"></script>
+        <script src="imitationDatabases/rSOwnerImitationDatabase.js"></script>
+    </head>
+    <body>
+        <ng-view ng-cloak=""></ng-view>
+        <!-- To contribute and access the code -->
+        <!-- Link to gitHub -->
+        <footer>
+            <p>To access the UMA_Angular and UMA_Node modules, to contribute, view this code, or to simply learn more please visit:</p>
+            <a href="https://github.com/K-Gonzalez/wg-umadev/tree/javascript_options/javascript_code" target="_blank">UMA JavaScript gitHub</a>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<section id="RSViewReports">
+    <!--<header>-->
+        <!--<h1>Your CPAP Reports:</h1>-->
+    <!--</header>-->
+    <section>
+        <header>
+            <h1>Reports</h1>
+        </header>
+        <Section>
+            <ul>
+                <li id="indReportSection" ng-repeat="report in reports track by $index">
+                    <i ng-click="openReport(report)" class="icon material-icons">folder_open</i>{{report.name}}
+                </li>
+            </ul>
+        </Section>
+        <footer>
+            <i ng-click="return()" class="icon material-icons">subdirectory_arrow_left</i>
+        </footer>
+    </section>
+</section>

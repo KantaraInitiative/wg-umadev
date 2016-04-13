@@ -1,0 +1,43 @@
+
+#tests > section{
+    width: 580px;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#tests > section > header {
+    height: 100%;
+    text-align: center;
+}
+#tests > section > section {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+#tests > section > section > ul {
+    list-style-type: disc;
+    color: #D14F4F;
+}
+#tests > section > section > ul > li > a{
+    cursor: pointer;
+}
+#tests > section > section > ul > li > a:hover{
+    color: #383961;
+}
+#tests > section > footer {
+    text-align: right;
+}
+#tests > section > footer > i {
+    font-size: 38px;
+    line-height: 38px;
+    padding-right: 10px;
+    color: #D14F4F;
+    transition: color 0.29s ease-in-out 0s;
+    cursor: pointer;
+}
+#tests > section > footer > i:hover {
+    font-size: 40px;
+    line-height: 40px;
+    color: #FAFCE3;
+}
